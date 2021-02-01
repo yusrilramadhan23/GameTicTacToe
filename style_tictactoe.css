@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background:rgba(238, 130, 238, 0.815);
+}
+.box, .play-board{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.box{
+    background: #ffffff;
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 50%;
+    transition: all 0.3s ease;
+}
+.box.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.box header{
+    font-size: 23px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cccccc;
+}
+.box .title{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+.box .options{
+    display: flex;
+    width: 100%;
+}
+.options button{
+    width: 100%; 
+    border-radius: 5px;
+    background: rgba(255, 192, 203, 0.555);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    color: darkviolet;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.options button:hover{
+    transform: scale(0.96);
+}
+
+button.playerX{
+    margin-right: 2%;
+}
+button.playerO{
+    margin-left: 2%;
+}
+
+/*playboard*/
+.play-board .details{
+    background: #ffffff;
+    padding: 7px;
+    border-radius: 5px;
+}
+.play-board section{
+    display: flex;
+}
+.play-board section span{
+    display: block;
+    margin: 3px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 100px;
+    color: violet;
+}
+.play-board .details .players{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+.players.active span:first-child{
+    color:violet;
+}
+.players.active span:nth-child(2){
+    color:#ffffff; 
+}
+.players.active .slider{
+    left: 50%; 
+}
+.play-board .details span{
+    color: violet;
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px 0;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+.details span:first-child{
+    color: #ffffff;
+}
+.details .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    border-radius: 5px;
+    z-index: 2;
+    background: rgba(238, 130, 238, 0.815);
+    transition: all 0.3s ease;
+}
+.play-board .playboard-area{
+    margin-top: 20px;
+}
+.play-board{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.play-board.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+/*result box*/
+.result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background: #ffffff;
+    border-radius: 5px;    
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.result-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+.result-box .won-game{
+    display: flex;
+    font-size: 25px;
+    font-weight: 500;
+    justify-content: center;
+}
+.won-game p{
+    margin: 0 5px 5px;
+       
+}
+.result-box .btn{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+.result-box .btn button{
+    border-radius: 5px;
+    background: rgba(255, 192, 203, 0.555);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    color: darkviolet;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.result-box .btn button:hover{
+    transform: scale(0.96);
+}
